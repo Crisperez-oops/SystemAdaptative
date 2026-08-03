@@ -17,36 +17,6 @@ Abarrotes, Ropa, Electrónica, Restaurante, Farmacia, Ferretería, Belleza y Tie
 
 ## Instalación
 
-```bash
-cd C:\laragon\www\pagina-prueba
-npm run install:all
-```
-
-## Desarrollo
-
-```bash
-npm run dev
-```
-
-- Frontend: http://localhost:5173
-- Backend: http://localhost:3001
-
-## Producción (navegador)
-
-```bash
-npm run build
-npm start
-```
-
-Abre http://localhost:3001
-
-## Instalador Windows (.exe)
-
-```bash
-npm run install:all
-npm run dist
-```
-
 El instalador queda en:
 
 `dist-installer\SistemaVentas-Setup-1.0.0.exe`
@@ -57,10 +27,5 @@ El instalador queda en:
 
 ### Portable (sin instalar)
 
-```bash
-npm run dist:portable
-```
-=======
 # SystemAdaptative
 Sistema adaptativo a cualquier tipo de negocio (o algunos por ahora)
->>>>>>> 5c7b079e855440123a793198ebb2f3f3d22f8284
