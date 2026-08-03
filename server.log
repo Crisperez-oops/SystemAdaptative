@@ -1,0 +1,5 @@
+
+> sistema-ventas-server@1.0.0 dev
+> node --watch index.js
+
+Servidor en http://localhost:3001

@@ -1,0 +1,5 @@
+Sistema de Ventas
+-----------------
+
+Al instalar este software aceptas usarlo bajo tu propia responsabilidad.
+Cada instalación es independiente y guarda sus datos locales en el equipo.

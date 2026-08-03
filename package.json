@@ -1,0 +1,73 @@
+{
+  "name": "sistema-ventas",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Sistema de ventas multi-tienda",
+  "author": "Sistema de Ventas",
+  "main": "electron/main.cjs",
+  "scripts": {
+    "dev": "concurrently \"npm run dev --prefix server\" \"npm run dev --prefix client\"",
+    "install:all": "npm install && npm install --prefix server && npm install --prefix client",
+    "build": "npm run build --prefix client",
+    "start": "npm start --prefix server",
+    "electron": "npm run build && electron .",
+    "pack": "npm run build && electron-builder --dir",
+    "dist": "npm run build && electron-builder --win",
+    "dist:setup": "npm run build && electron-builder --win nsis",
+    "dist:portable": "npm run build && electron-builder --win portable"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.21.2",
+    "multer": "^2.0.2",
+    "uuid": "^11.0.5"
+  },
+  "devDependencies": {
+    "concurrently": "^9.1.2",
+    "electron": "^35.1.2",
+    "electron-builder": "^26.0.12"
+  },
+  "build": {
+    "appId": "com.sistemaventas.app",
+    "productName": "Sistema de Ventas",
+    "copyright": "Copyright © 2026",
+    "directories": {
+      "output": "dist-installer",
+      "buildResources": "build"
+    },
+    "files": [
+      "electron/**/*",
+      "server/**/*",
+      "!server/data/**/*",
+      "!server/node_modules/**/*",
+      "client/dist/**/*",
+      "package.json"
+    ],
+    "asar": true,
+    "win": {
+      "target": [
+        {
+          "target": "nsis",
+          "arch": ["x64"]
+        },
+        {
+          "target": "portable",
+          "arch": ["x64"]
+        }
+      ]
+    },
+    "nsis": {
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": true,
+      "createDesktopShortcut": true,
+      "createStartMenuShortcut": true,
+      "shortcutName": "Sistema de Ventas",
+      "uninstallDisplayName": "Sistema de Ventas",
+      "license": "build/license.txt",
+      "artifactName": "SistemaVentas-Setup-${version}.${ext}"
+    },
+    "portable": {
+      "artifactName": "SistemaVentas-Portable-${version}.${ext}"
+    }
+  }
+}

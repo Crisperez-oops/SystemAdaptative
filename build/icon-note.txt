@@ -1,0 +1,1 @@
+Opcional: coloca aqui un archivo icon.ico para el instalador y el acceso directo.
